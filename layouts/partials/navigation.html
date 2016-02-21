@@ -3,3 +3,15 @@
         <a title="{{ .Name }}" href="{{ .URL }}">{{ .Name }}</a>
     </li>
 {{ end }}
+<li class="site-nav-item">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="HBS59DT6J8YMC">
+<input type="hidden" name="lc" value="ID">
+<input type="hidden" name="item_name" value="Personal Blog">
+<input type="hidden" name="item_number" value="personalblog">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+</form>
+</li>
