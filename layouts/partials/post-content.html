@@ -2,6 +2,11 @@
     {{ with .Params.Image }}
         <img class="post-featured-image" src="{{ . }}">
     {{ end }}
+    
+    {{ if .TableOfContents }}
+    	<div id="TableOfContentsLabel">Table of Contents</div>
+    	{{ .TableOfContents }}
+    {{ end }}
 
     {{ .Content }}
 </div>
