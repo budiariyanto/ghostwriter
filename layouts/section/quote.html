@@ -1,0 +1,22 @@
+{{ partial "header.html" . }}
+
+<div class="quote-container">
+{{ $baseurl := printf "%s" .Site.BaseURL }}
+{{ range $i, $r := getCSV "," "http://localhost:1313/" "quotes.csv" }}
+	{{ index $r 0 }} -- {{ index $r 1 }}
+{{ end }}
+
+
+{{ $pag := .Paginate .Data.Pages }}
+{{ range first 9 $pag.Pages }}
+    <div class="quote-content">
+        {{ partial "quote-content.html" . }}
+    </div>
+{{ end }}
+
+<div class="post-navigation after-quote-content">
+    {{ partial "pagination.html" . }}
+</div>
+</div>
+
+{{ partial "footer.html" . }}
